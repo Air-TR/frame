@@ -1,0 +1,8 @@
+# 不加入 spring-security 管理的 path
+## 排除 swagger：/swagger-resources/**,/swagger-ui.html,/v2/api-docs,/webjars/**
+security:
+  enable: true
+  ex-path: /auth/register,/auth/login,/swagger-resources/**,/swagger-ui.html,/v2/api-docs,/webjars/**
+
+token:
+  alive-time: 3600

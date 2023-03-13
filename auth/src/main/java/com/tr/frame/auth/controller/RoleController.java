@@ -1,0 +1,62 @@
+package com.tr.frame.auth.controller;
+
+import com.tr.frame.auth.controller.dto.RoleAddDto;
+import com.tr.frame.auth.controller.dto.RoleUpdateDto;
+import com.tr.frame.auth.controller.dto.UserRoleAddDto;
+import com.tr.frame.auth.entity.Role;
+import com.tr.frame.auth.entity.UserRole;
+import com.tr.frame.auth.service.RoleService;
+import com.tr.frame.auth.service.UserRoleService;
+import com.tr.frame.common.kit.ConvertKit;
+import io.swagger.annotations.Api;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import javax.validation.Valid;
+import java.util.List;
+
+/**
+ * @Author: TR
+ * @Date: 2023/3/10
+ */
+@Api(tags = "Role")
+@RestController
+public class RoleController {
+
+    @Resource
+    private RoleService roleService;
+
+    @Resource
+    private UserRoleService userRoleService;
+
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @PostMapping("/role/add")
+    public Role add(@RequestBody @Valid RoleAddDto addDto) {
+        return roleService.save(ConvertKit.convert(addDto, Role.class));
+    }
+
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @PutMapping("/role")
+    public Role update(@RequestBody @Valid RoleUpdateDto updateDto) {
+        return roleService.update(updateDto);
+    }
+
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @DeleteMapping("/role/{id}")
+    public void deleteById(@PathVariable Integer id) {
+        roleService.deleteById(id);
+    }
+
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @PostMapping("/user-role/add")
+    public List<UserRole> add(@RequestBody @Valid UserRoleAddDto addDto) {
+        return userRoleService.save(addDto);
+    }
+
+}

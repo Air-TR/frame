@@ -1,0 +1,13 @@
+mqtt:
+  url: tcp://153.37.213.2:1883
+  username: user
+  password: 123456
+  clientId: mqtt_demo_client
+  topic: topic0,topic1,topic2
+  qos: 0,1,2 # 与上面的 topic 一一对应
+  defaultTopic: default_topic
+  defaultQos: 0
+  completionTimeout: 3000
+  automaticReconnect: true # 断开连接重新连接
+  cleanSession: true
+  retained: false
