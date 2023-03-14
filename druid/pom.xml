@@ -8,37 +8,35 @@
         <version>2.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.tr</groupId>
-    <artifactId>business</artifactId>
+    <groupId>com.tr.frame</groupId>
+    <artifactId>druid</artifactId>
     <version>1.0.0</version>
-    <name>business</name>
-    <description>business</description>
+    <name>druid</name>
+    <description>druid</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+        <!-- Druid start -->
         <dependency>
-            <groupId>com.tr.frame</groupId>
-            <artifactId>auth</artifactId>
-            <version>1.0.0</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.2.8</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId> <!-- 不能少，少了报：UnsatisfiedDependencyException: Error creating bean with name 'dataSource' -->
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId> <!-- 不能少，少了报：BeanCreationException: Error creating bean with name 'dataSource' -->
+        </dependency>
+        <!-- Druid end -->
 
         <dependency>
-            <groupId>com.tr.frame</groupId>
-            <artifactId>mqtt</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.tr.frame</groupId>
-            <artifactId>jedis</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.tr.frame</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

@@ -26,7 +26,7 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @GetMapping("/user/{username}")
+    @GetMapping("/user/username/{username}")
     public User findByUsername(@PathVariable String username) {
         return userService.findByUsername(username);
     }

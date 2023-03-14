@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3307/frame?serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    druid:
+      filters: stat,wall # 底层开启功能，stat（sql监控），wall（防火墙）
+      filter: # 对上面 filters 详细配置
+        slf4j:
+          enabled: true # 开启日志功能
+        wall:
+          enabled: true # 开启防火墙功能
+          config:
+            drop-table-allow: false
+        stat:
+          enabled: true # 开启sql监控功能
+          slow-sql-millis: 1000  # 配置SQL慢的标准
+          log-slow-sql: true # 是否开启记录执行慢的sql
+      stat-view-servlet:
+        enabled: true # 开启监控页功能
+        login-username: tr # 监控页登录账号
+        login-password: 123456 # 监控页登录密码
+        reset-enable: false # 配置是否允许重置监控信息
+      web-stat-filter:
+        enabled: true # 开启web监控
+        urlPattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" # web监控白名单
