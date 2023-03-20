@@ -32,21 +32,16 @@
             <artifactId>mysql-connector-java</artifactId> <!-- 不能少，少了报：BeanCreationException: Error creating bean with name 'dataSource' -->
         </dependency>
         <!-- Druid end -->
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
-    <build>
+    <!-- 除了主启动项目都不能有 spring-boot-maven-plugin -->
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 </project>

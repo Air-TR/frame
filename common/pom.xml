@@ -80,13 +80,14 @@
         </dependency>
     </dependencies>
 
-    <build>
+    <!-- 除了主启动项目都不能有 spring-boot-maven-plugin -->
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 </project>

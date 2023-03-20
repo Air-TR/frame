@@ -27,13 +27,14 @@
         <module>mqtt</module>
     </modules>
 
-    <build>
+    <!-- 父工程中不能有 spring-boot-maven-plugin 插件，否则这个插件将传递到每一个子模块中，导致打包出错 -->
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 </project>

@@ -1,13 +1,13 @@
-package com.tr.frame.mqtt;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class MqttApplicationTests {
-
-    @Test
-    void contextLoads() {
-    }
-
-}
+//package com.tr.frame.mqtt;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//@SpringBootTest
+//class MqttApplicationTests {
+//
+//    @Test
+//    void contextLoads() {
+//    }
+//
+//}

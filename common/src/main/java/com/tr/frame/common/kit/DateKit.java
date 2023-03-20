@@ -13,6 +13,7 @@ import java.util.Date;
 public class DateKit extends DateUtils {
 
     public static final String DATE_FORMAT = "yyyy-MM-dd";
+    public static final String TIME_FORMAT = "HH:mm:ss";
     public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
     public static final String DATE_TIME_MS_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
     public static final String YEAR_FORMAT = "yyyy";
@@ -43,8 +44,16 @@ public class DateKit extends DateUtils {
         return simpleDateFormat.format(date);
     }
 
-    public static String dateTimeFormat() {
+    public static String getDateTime() {
         return format(new Date(), DateKit.DATE_TIME_FORMAT);
+    }
+
+    public static String getDate() {
+        return format(new Date(), DateKit.DATE_FORMAT);
+    }
+
+    public static String getTime() {
+        return format(new Date(), DateKit.TIME_FORMAT);
     }
 
 }

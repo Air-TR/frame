@@ -1,13 +1,13 @@
-package com.tr.frame.druid;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class DruidApplicationTests {
-
-    @Test
-    void contextLoads() {
-    }
-
-}
+//package com.tr.frame.druid;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//@SpringBootTest
+//class DruidApplicationTests {
+//
+//    @Test
+//    void contextLoads() {
+//    }
+//
+//}

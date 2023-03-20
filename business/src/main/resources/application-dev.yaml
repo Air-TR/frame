@@ -2,7 +2,7 @@ swagger:
   enable: true
 
 security:
-  enable: false
+  enable: true
   ex-path: /auth/register,/auth/login,/swagger-resources/**,/swagger-ui.html,/v2/api-docs,/webjars/**
 
 token:
