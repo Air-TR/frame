@@ -14,6 +14,8 @@ public enum ResultEnum {
     WRONG_PASSWORD(4, "密码错误"),
     USER_NOT_EXIST(5, "用户不存在"),
     NO_ACCESS(6, "没有权限访问"),
+    USERNAME_EXIST(7, "用户名已存在"),
+    USERNAME_OR_PASSWORD_WRONG(8, "用户名或密码错误"),
     RESPONSE_PACK_ERROR(10, "Response 返回包装失败")
     ;
 
